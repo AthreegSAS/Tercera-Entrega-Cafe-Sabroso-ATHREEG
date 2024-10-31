@@ -1,0 +1,366 @@
+body {
+  background: #f5e7dc;
+  background-size: cover;
+  background-attachment: fixed;
+  position: relative;
+  overflow-x: hidden;
+}
+
+header {
+  background-color: #322800; /* Color de fondo */
+  padding: 10px 15px; /* Reduce el padding para hacer el header más pequeño */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Sombra para profundidad */
+  flex-wrap: wrap; /* Permitir que los elementos se envuelvan en pantallas pequeñas */
+}
+
+.logo-image {
+  height: 2.5rem; /* Reduce el tamaño del logo */
+  margin-left: 1rem; /* Ajusta el margen */
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+
+}
+
+.menu-toggle {
+  display: none;
+}
+
+.menu-toggle-label {
+  display: none;
+}
+
+.menu {
+  display: flex;
+  align-items: center; /* Alinear elementos verticalmente */
+  justify-content: center;
+  width: 100%;
+}
+
+.menu ul {
+  list-style: none;
+  display: flex;
+  gap: 20px; /* Espaciado entre elementos del menú */
+  margin: 0; /* Eliminar margen */
+  padding: 0; /* Eliminar padding */
+  justify-content: center; /* Centra los elementos del menú */
+}
+
+.menu ul li {
+  position: relative;
+  margin: 0;
+}
+
+.menu ul li a {
+  font-family: 'Poppins', sans-serif; /* Aplica la fuente Poppins a los enlaces del menú */
+  background-color: #322800; /* Cambia el color de fondo */
+  color: #fff; /* Cambia el color del texto */
+  text-decoration: none;
+  font-weight: bold;
+  padding: 8px 16px;
+  border-radius: 20px;
+  transition: background-color 0.3s, color 0.3s, transform 0.3s;
+}
+
+.menu ul li a:hover {
+  background-color: #bc9a19; /* Cambia el color de fondo al pasar el mouse */
+  color: #fff; /* Cambia el color del texto al pasar el mouse */
+  transform: scale(1.05);
+}
+
+.menu ul li:nth-child(5),
+.menu ul li:nth-child(6) {
+  margin-left: auto; /* Mueve "LOGIN" y "CONTACTANOS" a la derecha */
+}
+
+.menu ul li:nth-child(5) a,
+.menu ul li:nth-child(6) a {
+  background-color: #322800; /* Color de fondo normal */
+  color: #fff; /* Color del texto */
+}
+
+.menu ul li:nth-child(5) a:hover,
+.menu ul li:nth-child(6) a:hover {
+  background-color: #bc9a19; /* Color dorado al pasar el mouse */
+  color: #fff; /* Color del texto al pasar el mouse */
+}
+
+/* Estilos para el submenú */
+.submenu {
+  display: none; /* Ocultar por defecto */
+  position: absolute;
+  left: 0;
+  top: 100%;
+  background-color: #322800;
+  padding: 10px;
+  z-index: 1000;
+  list-style: none;
+  margin: 0;
+  border-radius: 5px;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.menu ul li:hover .submenu {
+  display: block; /* Mostrar el submenú al pasar el mouse */
+  opacity: 1;
+  visibility: visible;
+}
+
+.submenu li {
+  display: block;
+  padding: 0.5rem 10px; /* Espaciado mejorado */
+}
+
+.submenu li a {
+  font-family: 'Poppins', sans-serif; /* Aplica la fuente Poppins a los enlaces del submenú */
+  color: #fff;
+  text-decoration: none;
+  display: block;
+  padding: 5px 10px; /* Espaciado mejorado */
+  border-radius: 3px; /* Bordes redondeados */
+  transition: background-color 0.3s; /* Transición suave */
+}
+
+.submenu li a:hover {
+  background-color: #555; /* Color de fondo al pasar el mouse */
+}
+
+.wave-image{
+  background-image:url("../img/banner.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+
+  -webkit-mask-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 100"><path d="M0,100 C150,95 350,95 500,100 L500,0 L0,0 Z" fill="white"/></svg>');
+  mask-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 100"><path d="M0,100 C150,95 350,95 500,100 L500,0 L0,0 Z" fill="white"/></svg>');
+  mask-size: cover;
+  -webkit-mask-size: cover;
+  mask-repeat: no-repeat;
+  -webkit-mask-repeat: no-repeat;
+  mask-position: 0 100%;
+  -webkit-mask-position: 0 100%;
+}
+
+.slogan {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+  min-height: 5vh;
+  width: 100%;
+  font-size: 1.5em;
+  color: #fff;
+}
+
+.content h1{
+  text-align: center;
+}
+
+.content {
+  float: center;
+  width: 100%;
+  color: #000;
+  background: #f5e7dc;
+  margin: auto;
+}
+
+
+.contact-section {
+  padding: 2rem;
+  max-width: 800px;
+  margin: 2rem auto;
+  background-color: white;
+  border-radius: 5px;
+  font-size: 19px;
+  border-style: double;
+  border-width: 8px;
+  border-radius: 10px;
+  border-color: #bc9a19;
+  box-sizing: border-box;
+}
+
+.contact-section h1{
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.contact-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: space-between;
+}
+
+.contact-form {
+  flex: 1 1 300px;
+}
+
+.contact-form label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.contact-form button {
+  display: inline-block;
+  background-color: #322800;
+  color: white;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.contact-form button:hover {
+  background-color: #bc9a19;
+}
+
+.inline-fields {
+  display:flex;
+  gap: 60px;
+}
+
+.inline-fields .field {
+  display: flex;
+  flex-direction: column;
+}
+
+.inline-fields .field.nombre {
+  width: 40%;
+}
+
+.inline-fields .field.email {
+  width: 60%;
+}
+
+footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  background-color: #322800;
+  color: #fff;
+}
+footer .social-media {
+  margin-bottom: 10px;
+}
+
+footer .social-media ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  gap: 15px;
+}
+
+footer .social-media ul li {
+  display: inline;
+}
+
+footer .social-media li a img {
+  width: 35px;
+  height: 35px;
+  margin-right: 0.5rem;
+}
+
+footer .social-media ul li a {
+  color: #322800;
+  text-decoration: none;
+}
+
+footer p {
+  margin: 0;
+}
+
+@media (max-width: 48rem) {
+  .navbar {
+  flex-direction: column;
+  align-items: center;
+}
+ 
+.logo {
+  justify-content: center; /* Logo centrado */
+}
+  
+.menu-toggle-label {
+  display: block;
+  cursor: pointer;
+  color: #fff;
+  font-size: 1.5rem;
+  padding: 0.625rem;
+}
+  
+.menu {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  background-color: #322800;
+  padding: 0.625rem;
+  width: 100%;
+}
+  
+.menu ul {
+  flex-direction: column;
+}
+  
+.menu li {
+  margin: 0.5rem 0;
+}
+  
+.menu li .submenu {
+  position: relative;
+  top: 0;
+  left: 0;
+  background-color: #322800;
+}
+  
+.menu li:hover .submenu {
+  display: block;
+  position: relative;
+}
+  
+#menu-toggle:checked + .menu-toggle-label + .menu {
+  display: flex;
+}
+  
+.content {
+  padding: 0.5rem;
+  font-size: 1rem;
+  width: 90%; /* Ajuste para que ocupe el 90% del ancho */
+  margin: 0.5rem auto; /* Centrado con margen automático */
+}
+  
+.content .par {
+  font-size: 1rem;
+}
+  
+footer .social-media {
+  width: 90%; /* Ajuste para que ocupe el 90% del ancho */
+  margin: 0 auto; /* Centrado con margen automático */
+  display: flex;
+  justify-content: center; /* Centrado horizontal de los elementos */
+}
+  
+footer .social-media ul {
+  flex-direction: column;
+  align-items: center; /* Centrado de los elementos en la columna */
+  gap: 0.5rem; /* Espacio entre los elementos */
+}
+}

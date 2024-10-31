@@ -1,0 +1,64 @@
+****Cafe
+cafe1 - 
+cafe2 -
+cafe3 -
+cafe4 -
+cafe5 -
+cafe6 -
+cafe7 - 
+cafe8 -
+cafe9 -
+cafe10 -
+cafe11 -
+submarino
+Cafe_con_chocolate
+Cafe_azteca
+
+
+
+los que tiene un - están cargados
+
+
+
+
+****jugos
+
+jugo   
+jugo2gustos  
+jugoanana  
+jugoSandia
+limonada  -
+
+*****dulces
+muffing   -
+roscadulce 
+tortadulce
+PostreChocolate
+Milhojas
+tortadulceporcion -
+
+
+*****salados
+roscasalada -
+chipaPY
+MediaLuna
+Scones
+sandchichsaludable -
+
+
+**** Te
+
+te1 -
+te2 -
+te3 -
+te4 -
+te5 -
+te6 -
+te7 - 
+te8 -
+te9 -
+teParaguay -
+Te_3hierbas
+Te_de_la_India
+teCapuchino
+

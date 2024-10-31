@@ -1,0 +1,774 @@
+@font-face {
+  font-family: 'Poppins';
+  src: url('fonts/Poppins-Regular.ttf') format('truetype'); /* Asegúrate de que la ruta al archivo de fuente sea correcta */
+}
+
+body {
+  background: #f5e7dc;
+  background-size: cover;
+  background-attachment: fixed;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  font-family: 'Poppins', sans-serif; /* Fuente principal para el cuerpo */
+  overflow-x: hidden;
+}
+
+header {
+  background-color: #322800; /* Color de fondo */
+  padding: 0.625rem 0.9375rem; /* Ajuste de padding para un look más limpio */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 0.125rem 0.3125rem rgba(0, 0, 0, 0.2); /* Sombra para profundidad */
+  flex-wrap: wrap;
+}
+
+.logo-image {
+  height: 2.5rem;
+  margin-left: 1rem; /* Ajuste de margen */
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.shop-header {
+  text-align: center;
+  margin: 20px;
+}
+
+.shop-header h3,
+.shop-header h4 {
+  margin: 5px 0;
+}
+
+.productos-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 0 10px;
+  padding: 20px;
+}
+
+.producto-card {
+  background-color: white;
+  border: 0.0625rem solid #ddd; /* 1px = 0.0625rem */
+  border-radius: 0.3125rem; /* 5px = 0.3125rem */
+  width: 30%;
+  margin-bottom: 1.25rem; /* 20px = 1.25rem */
+  transition: transform 0.2s;
+}
+
+.producto-card:hover {
+  transform: translateY(-5px);
+}
+
+.producto-imagen img {
+  width: 100%;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.producto-detalles {
+  padding: 15px;
+  text-align: center;
+}
+
+.producto-precio {
+  font-size: 1.2em;
+  color: #333;
+  margin-bottom: 10px;
+  display: block;
+}
+
+.pagination {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.pagination a {
+  margin: 0 5px;
+  padding: 8px 12px;
+  background-color: #333;
+  color: white;
+  text-decoration: none;
+  border-radius: 3px;
+  transition: background-color 0.3s;
+}
+
+.pagination a:hover {
+  background-color: #555;
+}
+
+.menu-toggle {
+  display: none;
+}
+
+.menu-toggle-label {
+  display: none;
+}
+
+.menu {
+  display: flex;
+  align-items: center; /* Alinear elementos verticalmente */
+  justify-content: center;
+  width: 100%;
+}
+
+.menu ul {
+  list-style: none;
+  display: flex;
+  gap: 20px; /* Espaciado entre elementos del menú */
+  margin: 0; /* Eliminar margen */
+  padding: 0; /* Eliminar padding */
+  justify-content: center; /* Centra los elementos del menú */
+}
+
+.menu ul li {
+  position: relative;
+  margin: 0;
+}
+
+.menu ul li a {
+  font-family: 'Poppins', sans-serif; /* Aplica la fuente Poppins a los enlaces del menú */
+  background-color: #322800; /* Cambia el color de fondo */
+  color: #fff; /* Cambia el color del texto */
+  text-decoration: none;
+  font-weight: bold;
+  padding: 8px 16px;
+  border-radius: 20px;
+  transition: background-color 0.3s, color 0.3s, transform 0.3s;
+}
+
+.menu ul li a:hover {
+  background-color: #bc9a19; /* Cambia el color de fondo al pasar el mouse */
+  color: #fff; /* Cambia el color del texto al pasar el mouse */
+  transform: scale(1.05);
+}
+
+.menu ul li:nth-child(5),
+.menu ul li:nth-child(6) {
+  margin-left: auto; /* Mueve "LOGIN" y "CONTACTANOS" a la derecha */
+}
+
+.menu ul li:nth-child(5) a,
+.menu ul li:nth-child(6) a {
+  background-color: #322800; /* Color de fondo normal */
+  color: #fff; /* Color del texto */
+}
+
+.menu ul li:nth-child(5) a:hover,
+.menu ul li:nth-child(6) a:hover {
+  background-color: #bc9a19; /* Color dorado al pasar el mouse */
+  color: #fff; /* Color del texto al pasar el mouse */
+}
+
+/* Estilos para el submenú */
+.submenu {
+  display: none; /* Ocultar por defecto */
+  position: absolute;
+  left: 0;
+  top: 100%;
+  background-color: #322800;
+  padding: 10px;
+  z-index: 1000;
+  list-style: none;
+  margin: 0;
+  border-radius: 5px;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.menu ul li:hover .submenu {
+  display: block; /* Mostrar el submenú al pasar el mouse */
+  opacity: 1;
+  visibility: visible;
+}
+
+.menu ul li:nth-child(5),
+.menu ul li:nth-child(6) {
+  margin-left: auto; /* Mueve "LOGIN" y "CONTACTANOS" a la derecha */
+}
+
+.menu ul li:nth-child(5) a,
+.menu ul li:nth-child(6) a {
+  background-color: #322800; /* Color de fondo normal */
+  color: #fff; /* Color del texto */
+}
+
+.menu ul li:nth-child(5) a:hover,
+.menu ul li:nth-child(6) a:hover {
+  background-color: #bc9a19; /* Color dorado al pasar el mouse */
+  color: #fff; /* Color del texto al pasar el mouse */
+}
+
+.submenu li {
+  display: block;
+  padding: 0.5rem 10px; /* Espaciado mejorado */
+}
+
+.submenu li a {
+  font-family: 'Poppins', sans-serif; /* Aplica la fuente Poppins a los enlaces del submenú */
+  color: #fff;
+  text-decoration: none;
+  display: block;
+  padding: 5px 10px; /* Espaciado mejorado */
+  border-radius: 3px; /* Bordes redondeados */
+  transition: background-color 0.3s; /* Transición suave */
+}
+
+.submenu li a:hover {
+  background-color: #555; /* Color de fondo al pasar el mouse */
+}
+
+.wave-image{
+  background-image:url("../img/banner.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+
+  -webkit-mask-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 150"><path d="M0,140 C100,120 200,160 300,140 C400,120 500,160 600,140 L500,0 L0,0 Z" fill="white"/></svg>');
+  mask-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 150"><path d="M0,140 C100,120 200,160 300,140 C400,120 500,160 600,140 L500,0 L0,0 Z" fill="white"/></svg>');
+  mask-size: cover;
+  -webkit-mask-size: cover;
+  mask-repeat: no-repeat;
+  -webkit-mask-repeat: no-repeat;
+}
+
+.wave-image-2{
+  background-image:url("../img/banner.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+
+  -webkit-mask-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 100"><path d="M0,100 C150,95 350,95 500,100 L500,0 L0,0 Z" fill="white"/></svg>');
+  mask-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 100"><path d="M0,100 C150,95 350,95 500,100 L500,0 L0,0 Z" fill="white"/></svg>');
+  mask-size: cover;
+  -webkit-mask-size: cover;
+  mask-repeat: no-repeat;
+  -webkit-mask-repeat: no-repeat;
+  mask-position: 0 100%;
+  -webkit-mask-position: 0 100%;
+}
+
+.slogan {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+  font-size: 1.5em;
+  color: #fff;
+}
+
+.slogan h1 {
+  font-size: 3em;
+  margin: 0;
+}
+
+.slogan p {
+  font-size: 1.5em;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin: 1,25rem;
+}
+.container img {
+  width: 31.25rem; /* 500px = 31.25rem */
+  margin-left: 2.5rem; /* 40px = 2.5rem */
+  margin-right: 1.25rem; /* 20px = 1.25rem */
+  flex: 1 1 300px;
+}
+
+.container .restaurant-card{
+  flex: 1 1 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.container .par {
+  font-size: 21px;
+  font-family: 'Poppins', sans-serif; /* Fuente para el texto dentro de pre */
+}
+
+.container .par strong {
+  font-family: 'Lora', serif; /* Fuente para el texto dentro de strong */
+}
+
+.content {
+  float: center;
+  width: 100%;
+  height: auto;
+  color: #000;
+  background: #f5e7dc;
+  margin: auto;
+}
+
+.content h1 {
+  text-align: center;
+}
+
+.content .par {
+  font-size: 1.25rem;
+}
+
+footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1.25rem;
+  background-color: #322800;
+  color: #fff;
+}
+
+footer .social-media {
+  margin-bottom: 0.625rem;
+}
+
+footer .social-media ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  gap: 0.938rem;
+}
+
+footer .social-media ul li {
+  display: inline;
+}
+
+footer .social-media li a img {
+  width: 2.188rem;
+  height: 2.188rem;
+  margin-right: 0.5rem;
+}
+
+footer .social-media ul li a {
+  color: #322800;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+footer p {
+  margin: 0;
+}
+
+.contact-section {
+  padding: 2rem;
+  max-width: 800px;
+  margin: 2rem auto;
+  background-color: white;
+  border-radius: 5px;
+  font-size: 19px;
+  border-style: double;
+  border-width: 8px;
+  border-radius: 10px;
+  border-color: #bc9a19;
+  box-sizing: border-box;
+}
+
+.form-container {
+  max-width: 25rem;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: white;
+  border: 0.5rem double #bc9a19;
+  border-radius: 0.625rem;
+  box-sizing: border-box;
+}
+
+.form-container h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: #322800;
+}
+
+.form-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.form-group {
+  width: 100%;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+  color: #322800;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 0.5rem;
+  margin-bottom: 0.5rem;
+  border: 0.0625rem solid #ccc;
+  border-radius: 0.25rem;
+  font-size: 1rem;
+}
+
+.form-submit {
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.form-submit button {
+  background-color: #322800; /* Cambia el color de fondo */
+  color: #fff; /* Cambia el color del texto */
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.form-submit button:hover {
+  background-color: #555; /* Cambia el color de fondo al pasar el mouse */
+}
+
+.error-message {
+  color: red;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.main-content {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+
+.login-section {
+  width: 100%;
+  max-width: 25rem;
+}
+
+/* Selector de ubicación */
+.location-selector {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px auto;
+  font-size: 1.2em;
+}
+
+.location-selector label {
+  margin-bottom: 10px;
+  color: #322800;
+  font-weight: bold;
+}
+
+#select-location {
+  padding: 10px;
+  width: 80%;
+  max-width: 400px;
+  border: 2px solid #322800;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  color: #322800;
+}
+
+#select-location:hover {
+  border-color: #bc9a19;
+}
+
+#select-location:focus {
+  outline: none;
+  border-color: #bc9a19;
+  box-shadow: 0 0 10px rgba(188, 154, 25, 0.5);
+}
+#map {
+  width: 80%;
+  height: 400px;
+  margin: 20px auto;
+  border: 5px solid #bc9a19; /* Borde alrededor del mapa */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-top: 10px; /* Espaciado superior entre el mapa y el borde */
+}
+
+/* Estilos responsivos */
+
+@media (max-width: 48rem) {
+  .container {
+    flex-direction: column;
+    justify-content: center;  /* Stack image and text vertically on smaller screens */
+  }
+
+  .container .img {
+    order: 1;  /* Image will appear first even on smaller screens */
+    margin-left: 0.625rem;
+  }
+
+  .container .restaurant-card {
+    order: 2;  /* Text will appear below the image */
+    text-align: center;
+    margin-left: 0.625rem;
+  }
+
+  .logo-image {
+    height: 2.5rem;
+    margin-left: 0;
+    background-image: url('../img/logo_nav.png');
+    width: 8rem;
+  }
+
+  .navbar {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .logo {
+    justify-content: center;
+  }
+
+  .producto-card {
+    width: 100%;
+  }
+
+  .menu-toggle-label {
+    display: block;
+    cursor: pointer;
+    color: #fff;
+    font-size: 1.5rem;
+    padding: 0.625rem;
+  }
+
+  .menu {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    background-color: #322800;
+    padding: 0.625rem;
+    width: 100%;
+  }
+
+  .menu ul {
+    flex-direction: column;
+  }
+
+  .menu li {
+    margin: 0.5rem 0;
+  }
+
+  .menu li .submenu {
+    position: relative;
+    top: 0;
+    left: 0;
+    background-color: #322800;
+  }
+
+  .menu li:hover .submenu {
+    display: block;
+    position: relative;
+  }
+
+  #menu-toggle:checked + .menu-toggle-label + .menu {
+    display: flex;
+  }
+
+  .user-info,
+  .mozo-nombre {
+    text-align: center;
+    padding: 10px 0;
+  }
+
+  .form-container {
+    max-width: 90%;
+    padding: 1.5rem;
+  }
+
+  .content {
+    padding: 0.5rem;
+    font-size: 1rem;
+    width: 90%;
+    margin: 0.5rem auto;
+  }
+
+  .content .par {
+    font-size: 1rem;
+  }
+
+  footer .social-media {
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+  }
+
+  footer .social-media ul {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .login-section {
+    max-width: 90%;
+  }
+
+  .slogan h1 {
+    font-size: 2em;
+  }
+
+  .slogan p {
+    font-size: 1.2em;
+  }
+
+  /* Añade estas reglas al final de tu archivo CSS */
+
+  /* Hacer que todos los contenedores principales sean responsivos */
+  .shop-header,
+  .productos-container,
+  .pagination,
+  .slogan,
+  .content,
+  .contact-section,
+  .form-container {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 1rem;
+  }
+
+  /* Ajustar el tamaño de fuente para mejor legibilidad en móviles */
+  body {
+    font-size: 16px;
+  }
+
+  /* Hacer que las imágenes sean responsivas */
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* Ajustar el espaciado en el menú responsivo */
+  .menu ul {
+    gap: 15px;
+  }
+
+  /* Mejorar la visualización de la sección de slogan */
+  .slogan {
+    min-height: 50vh;
+  }
+
+  /* Ajustar el tamaño de los iconos sociales para móviles */
+  footer .social-media li a img {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+
+  /* Hacer que los botones sean más fáciles de tocar en móviles */
+  button,
+  .pagination a,
+  .form-submit button {
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+  }
+
+  /* Ajustar el espaciado en el formulario para móviles */
+  .form-group {
+    margin-bottom: 1rem;
+  }
+
+  /* Hacer que las tablas sean responsivas si las hay */
+  table {
+    width: 100%;
+    overflow-x: auto;
+    display: block;
+  }
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Lora', serif; /* Fuente para títulos */
+}
+
+body, p, .form-group input, .form-group label, .content .par, .shop-header h3, .shop-header h4, .producto-precio {
+  font-family: 'Poppins', sans-serif; /* Fuente para textos y botones */
+}
+
+.cafe-familia {
+    font-family: 'Lora', serif;
+    font-size: 2em;
+    color: #bc9a19; /* Color dorado */
+    text-align: center;
+    display: block;
+    margin-bottom: 10px;
+    animation: fadeIn 2s ease-in-out, colorChange 3s infinite alternate;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes colorChange {
+    from {
+        color: #bc9a19; /* Color dorado */
+    }
+    to {
+        color: #322800; /* Color oscuro */
+    }
+}
+
+.welcome-text {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.2em;
+    color: #322800;
+    text-align: center;
+    display: block;
+    margin-top: 10px;
+    animation: textFadeIn 3s ease-in-out, textColorChange 5s infinite alternate;
+}
+
+@keyframes textFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes textColorChange {
+    from {
+        color: #322800; /* Color oscuro */
+    }
+    to {
+        color: #bc9a19; /* Color dorado */
+    }
+}
+
+.restaurant-card {
+    background-color: #fff8e1; /* Fondo claro */
+    border: 2px solid #bc9a19; /* Borde dorado */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para efecto de elevación */
+    padding: 20px;
+    max-width: 600px;
+    margin: 20px auto;
+    text-align: center;
+}

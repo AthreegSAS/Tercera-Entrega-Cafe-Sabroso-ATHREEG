@@ -1,0 +1,1136 @@
+body {
+  background: #f5e7dc;
+  background-size: cover;
+  background-attachment: fixed;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+header {
+  position: relative; /* Solo si es necesario */
+  background-color: #322800;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo-image {
+  height: 3.75rem;
+  margin-left: 7.5rem;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.shop-header {
+  text-align: center;
+  margin: 20px;
+}
+
+.shop-header h3,
+.shop-header h4 {
+  margin: 5px 0;
+}
+
+.productos-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 20px;
+}
+
+.producto-card {
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  width: 30%;
+  margin-bottom: 20px;
+  transition: transform 0.2s;
+}
+
+.producto-card:hover {
+  transform: translateY(-5px);
+}
+
+.producto-imagen img {
+  width: 100%;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.producto-detalles {
+  padding: 15px;
+  text-align: center;
+}
+
+.producto-precio {
+  font-size: 1.2em;
+  color: #333;
+  margin-bottom: 10px;
+  display: block;
+}
+
+.pagination {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.pagination a {
+  margin: 0 5px;
+  padding: 8px 12px;
+  background-color: #333;
+  color: white;
+  text-decoration: none;
+  border-radius: 3px;
+  transition: background-color 0.3s;
+}
+
+.pagination a:hover {
+  background-color: #555;
+}
+
+/* General styling for the navigation bar */
+.navbar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #333; /* Mantenido del anterior */
+}
+
+.navbar ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: row; /* Cambiar a fila en pantallas grandes */
+}
+
+.navbar li {
+  position: relative;
+  display: inline-block;
+}
+
+.navbar a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.navbar a:hover {
+  background-color: #111; /* Mantenido del anterior */
+}
+
+/* Submenu Styling */
+.submenu {
+  display: none; /* Hide submenu by default */
+  position: absolute;
+  top: 100%; /* Position the submenu below the parent menu */
+  left: 0;
+  background-color: #333; /* Same as navbar */
+  z-index: 1;
+}
+
+.submenu li {
+  display: block;
+}
+
+.submenu a {
+  padding: 12px 16px;
+  text-align: left;
+  color: white; /* Color de texto del submenú */
+}
+
+/* Show the submenu on hover */
+.navbar li:hover .submenu {
+  display: block;
+}
+
+/* Estilos para el menú hamburguesa */
+.menu-toggle {
+  display: none; /* Ocultar el checkbox por defecto */
+}
+
+.menu-toggle-label {
+  display: none; /* Ocultar la etiqueta por defecto */
+}
+
+/* Estilos para pantallas pequeñas */
+@media (max-width: 768px) {
+  .navbar ul {
+    display: none; /* Ocultar el menú por defecto en pantallas pequeñas */
+    flex-direction: column; /* Cambiar a columna en pantallas pequeñas */
+    width: 100%; /* Asegurarse de que ocupe todo el ancho */
+  }
+
+  .navbar li {
+    width: 100%; /* Hacer que los elementos de la lista ocupen todo el ancho */
+  }
+
+  .menu-toggle {
+    display: block; /* Mostrar el checkbox en pantallas pequeñas */
+  }
+
+  .menu-toggle-label {
+    display: block; /* Mostrar la etiqueta en pantallas pequeñas */
+    cursor: pointer;
+    color: white;
+    font-size: 1.5rem;
+    padding: 14px 16px;
+    background-color: #333; /* Color de fondo del botón hamburguesa */
+  }
+
+  /* Mostrar el menú cuando el checkbox está marcado */
+  #menu-toggle:checked + .menu-toggle-label + .navbar ul {
+    display: flex; /* Mostrar el menú */
+  }
+
+  .submenu {
+    position: relative; /* Cambiar a posición relativa en pantallas pequeñas */
+    top: 0;
+    left: 0;
+    background-color: #333; /* Mismo color de fondo */
+  }
+
+  .navbar li:hover .submenu {
+    display: block; /* Mostrar el submenú al pasar el mouse */
+    position: relative; /* Asegurarse de que esté en posición relativa */
+  }
+}
+
+/* Resto de estilos */
+.slogan {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+  background-image: linear-gradient(
+      to top,
+      rgba(0, 0, 0, 0.2) 50%,
+      rgba(0, 0, 0, 0.2) 50%
+    ),
+    url("../img/banner.png");
+  background-position: center bottom;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  font-size: 1.5em;
+  color: #fff;
+}
+
+.slogan h1 {
+  font-size: 3em;
+  margin: 0;
+}
+
+.slogan p {
+  font-size: 1.5em;
+}
+
+.content {
+  float: center;
+  width: 100%;
+  height: auto;
+  color: #000;
+  background: #f5e7dc;
+  margin: auto;
+}
+
+.content h1 {
+  text-align: center;
+}
+
+.content .par {
+  font-size: 1.25rem;
+}
+
+footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1.25rem;
+  background-color: #322800;
+  color: #fff;
+}
+
+footer .social-media {
+  margin-bottom: 0.625rem;
+}
+
+footer .social-media ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  gap: 0.938rem;
+}
+
+footer .social-media ul li {
+  display: inline;
+}
+
+footer .social-media li a img {
+  width: 2.188rem;
+  height: 2.188rem;
+  margin-right: 0.5rem;
+}
+
+footer .social-media ul li a {
+  color: #322800;
+  text-decoration: none;
+}
+
+footer p {
+  margin: 0;
+}
+
+.contact-section {
+  padding: 2rem;
+  max-width: 800px;
+  margin: 2rem auto;
+  background-color: white;
+  border-radius: 5px;
+  font-size: 19px;
+  border-style: double;
+  border-width: 8px;
+  border-radius: 10px;
+  border-color: #bc9a19;
+  box-sizing: border-box;
+}
+
+.form-container {
+  max-width: 25rem;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: white;
+  border: 0.5rem double #bc9a19;
+  border-radius: 0.625rem;
+  box-sizing: border-box;
+}
+
+.form-container h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: #322800;
+}
+
+.form-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.form-group {
+  width: 100%;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+  color: #322800;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 0.5rem;
+  margin-bottom: 0.5rem;
+  border: 0.0625rem solid #ccc;
+  border-radius: 0.25rem;
+  font-size: 1rem;
+}
+
+.form-submit {
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.form-submit button {
+  background-color: #322800;
+  color: white;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.form-submit button:hover {
+  background-color: #bc9a19;
+}
+
+.error-message {
+  color: red;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.main-content {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+
+.login-section {
+  width: 100%;
+  max-width: 25rem;
+}
+
+/* Selector de ubicación */
+.location-selector {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px auto;
+  font-size: 1.2em;
+}
+
+.location-selector label {
+  margin-bottom: 10px;
+  color: #322800;
+  font-weight: bold;
+}
+
+#select-location {
+  padding: 10px;
+  width: 80%;
+  max-width: 400px;
+  border: 2px solid #322800;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  color: #322800;
+}
+
+#select-location:hover {
+  border-color: #bc9a19;
+}
+
+#select-location:focus {
+  outline: none;
+  border-color: #bc9a19;
+  box-shadow: 0 0 10px rgba(188, 154, 25, 0.5);
+}
+
+#map {
+  width: 80%;
+  height: 400px;
+  margin: 20px auto;
+  border: 5px solid #bc9a19; /* Borde alrededor del mapa */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-top: 10px; /* Espaciado superior entre el mapa y el borde */
+}
+
+/* estilo que comparten las tres secciones de los empleados */
+.panel-gerente-mozo-chef {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 50%;
+  max-width: 800px; /* Ajusta el ancho máximo según tus necesidades */
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff; /* Opcional: establece un color de fondo */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Opcional: agrega una sombra */
+  border-radius: 10px; /* Opcional: agrega bordes redondeados */
+}
+
+/* Estilos responsivos */
+@media (max-width: 48rem) {
+  .logo-image {
+    height: 2.5rem;
+    margin-left: 0;
+    background-image: url(../img/logo_nav.png);
+    width: 8rem;
+  }
+
+  .navbar {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .logo {
+    justify-content: center;
+  }
+
+  .producto-card {
+    width: 100%;
+  }
+
+  .menu-toggle-label {
+    display: block;
+    cursor: pointer;
+    color: #fff;
+    font-size: 1.5rem;
+    padding: 0.625rem;
+  }
+
+  .menu {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    background-color: #322800;
+    padding: 0.625rem;
+    width: 100%;
+  }
+
+  .menu ul {
+    flex-direction: column;
+  }
+
+  .menu li {
+    margin: 0.5rem 0;
+  }
+
+  .menu li .submenu {
+    position: relative;
+    top: 0;
+    left: 0;
+    background-color: #322800;
+  }
+
+  .menu li:hover .submenu {
+    display: block;
+    position: relative;
+  }
+
+  #menu-toggle:checked + .menu-toggle-label + .menu {
+    display: flex;
+  }
+
+  .user-info,
+  .mozo-nombre {
+    text-align: center;
+    padding: 10px 0;
+  }
+
+  .form-container {
+    max-width: 90%;
+    padding: 1.5rem;
+  }
+
+  .content {
+    padding: 0.5rem;
+    font-size: 1rem;
+    width: 90%;
+    margin: 0.5rem auto;
+  }
+
+  .content .par {
+    font-size: 1rem;
+  }
+
+  footer .social-media {
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+  }
+
+  footer .social-media ul {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .login-section {
+    max-width: 90%;
+  }
+
+body {
+  background: #f5e7dc;
+  background-size: cover;
+  background-attachment: fixed;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+header {
+  position: relative; /* Solo si es necesario */
+  background-color: #322800;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo-image {
+  height: 3.75rem;
+  margin-left: 7.5rem;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+
+}
+
+.shop-header {
+  text-align: center;
+  margin: 20px;
+}
+
+.shop-header h3,
+.shop-header h4 {
+  margin: 5px 0;
+}
+
+.productos-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 20px;
+}
+
+.producto-card {
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  width: 30%;
+  margin-bottom: 20px;
+  transition: transform 0.2s;
+}
+
+.producto-card:hover {
+  transform: translateY(-5px);
+}
+
+.producto-imagen img {
+  width: 100%;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.producto-detalles {
+  padding: 15px;
+  text-align: center;
+}
+
+.producto-precio {
+  font-size: 1.2em;
+  color: #333;
+  margin-bottom: 10px;
+  display: block;
+}
+
+.pagination {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.pagination a {
+  margin: 0 5px;
+  padding: 8px 12px;
+  background-color: #333;
+  color: white;
+  text-decoration: none;
+  border-radius: 3px;
+  transition: background-color 0.3s;
+}
+
+.pagination a:hover {
+  background-color: #555;
+}
+
+
+.menu-toggle {
+  display: none;
+}
+
+.menu-toggle-label {
+  display: none;
+}
+
+.menu ul {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+  margin: 20px;
+  padding: 0;
+}
+
+.menu ul li {
+  position: relative;
+  margin-bottom: 0;
+  
+  
+}
+
+.menu ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+  padding: 0;
+}
+
+.menu ul li a:hover {
+  color: #bc9a19;
+}
+
+.submenu {
+  display: none;
+  position: absolute;
+  left: 0;
+  top: 100%; /* Ajusta el submenú justo debajo del li */
+  background-color: #322800;
+  padding: 10px 0;
+  z-index: 1000;
+  list-style: none;
+  margin: 0;
+  border-radius: 5px;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  opacity: 0;
+  visibility: hidden;
+}
+
+
+.submenu li {
+  display: block;
+  padding: 0.313rem 10px;
+}
+
+.submenu li a {
+  color: #fff;
+  text-decoration: none;
+  display: block;
+  padding: 5px 0;
+}
+
+li:hover .submenu {
+  display: block; /* Asegúrate de que el submenú se muestre al pasar el mouse */
+  color: #322800;
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto; /* Permite la interacción con el submenú */
+}
+
+.slogan {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+  background-image: linear-gradient(
+      to top,
+      rgba(0, 0, 0, 0.2) 50%,
+      rgba(0, 0, 0, 0.2) 50%
+    ),
+    url("../img/banner.png");
+  background-position: center bottom;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  font-size: 1.5em;
+  color: #fff;
+}
+
+.slogan h1 {
+  font-size: 3em;
+  margin: 0;
+}
+
+.slogan p {
+  font-size: 1.5em;
+}
+
+.content {
+  float: center;
+  width: 100%;
+  height: auto;
+  color: #000;
+  background: #f5e7dc;
+  margin: auto;
+}
+
+.content h1 {
+  text-align: center;
+}
+
+.content .par {
+  font-size: 1.25rem;
+}
+
+footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1.25rem;
+  background-color: #322800;
+  color: #fff;
+}
+
+footer .social-media {
+  margin-bottom: 0.625rem;
+}
+
+footer .social-media ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  gap: 0.938rem;
+}
+
+footer .social-media ul li {
+  display: inline;
+}
+
+footer .social-media li a img {
+  width: 2.188rem;
+  height: 2.188rem;
+  margin-right: 0.5rem;
+}
+
+footer .social-media ul li a {
+  color: #322800;
+  text-decoration: none;
+}
+
+footer p {
+  margin: 0;
+}
+
+.contact-section {
+  padding: 2rem;
+  max-width: 800px;
+  margin: 2rem auto;
+  background-color: white;
+  border-radius: 5px;
+  font-size: 19px;
+  border-style: double;
+  border-width: 8px;
+  border-radius: 10px;
+  border-color: #bc9a19;
+  box-sizing: border-box;
+}
+
+.form-container {
+  max-width: 25rem;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: white;
+  border: 0.5rem double #bc9a19;
+  border-radius: 0.625rem;
+  box-sizing: border-box;
+}
+
+.form-container h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: #322800;
+}
+
+.form-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.form-group {
+  width: 100%;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+  color: #322800;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 0.5rem;
+  margin-bottom: 0.5rem;
+  border: 0.0625rem solid #ccc;
+  border-radius: 0.25rem;
+  font-size: 1rem;
+}
+
+.form-submit {
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.form-submit button {
+  background-color: #322800;
+  color: white;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.form-submit button:hover {
+  background-color: #bc9a19;
+}
+
+.error-message {
+  color: red;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.main-content {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+
+.login-section {
+  width: 100%;
+  max-width: 25rem;
+}
+
+/* Selector de ubicación */
+.location-selector {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px auto;
+  font-size: 1.2em;
+}
+
+.location-selector label {
+  margin-bottom: 10px;
+  color: #322800;
+  font-weight: bold;
+}
+
+#select-location {
+  padding: 10px;
+  width: 80%;
+  max-width: 400px;
+  border: 2px solid #322800;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  color: #322800;
+}
+
+#select-location:hover {
+  border-color: #bc9a19;
+}
+
+#select-location:focus {
+  outline: none;
+  border-color: #bc9a19;
+  box-shadow: 0 0 10px rgba(188, 154, 25, 0.5);
+}
+#map {
+  width: 80%;
+  height: 400px;
+  margin: 20px auto;
+  border: 5px solid #bc9a19; /* Borde alrededor del mapa */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-top: 10px; /* Espaciado superior entre el mapa y el borde */
+}
+/* estilo que comparten las tres secciones de los empleados */
+.panel-gerente-mozo-chef {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 50%;
+  max-width: 800px; /* Ajusta el ancho máximo según tus necesidades */
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff; /* Opcional: establece un color de fondo */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Opcional: agrega una sombra */
+  border-radius: 10px; /* Opcional: agrega bordes redondeados */
+}
+/* Estilos responsivos */
+@media (max-width: 48rem) {
+  .logo-image {F
+    height: 2.5rem;
+    margin-left: 0;
+    background-image: url(../img/logo_nav.png');
+    width: 8rem;
+  }
+
+  .navbar {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .logo {
+    justify-content: center;
+  }
+
+  .producto-card {
+    width: 100%;
+  }
+
+  .menu-toggle-label {
+    display: block;
+    cursor: pointer;
+    color: #fff;
+    font-size: 1.5rem;
+    padding: 0.625rem;
+  }
+
+  .menu {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    background-color: #322800;
+    padding: 0.625rem;
+    width: 100%;
+  }
+
+  .menu ul {
+    flex-direction: column;
+  }
+
+  .menu li {
+    margin: 0.5rem 0;
+  }
+
+  .menu li .submenu {
+    position: relative;
+    top: 0;
+    left: 0;
+    background-color: #322800;
+  }
+
+  .menu li:hover .submenu {
+    display: block;
+    position: relative;
+  }
+
+  #menu-toggle:checked + .menu-toggle-label + .menu {
+    display: flex;
+  }
+
+  .user-info,
+  .mozo-nombre {
+    text-align: center;
+    padding: 10px 0;
+  }
+
+  .form-container {
+    max-width: 90%;
+    padding: 1.5rem;
+  }
+
+  .content {
+    padding: 0.5rem;
+    font-size: 1rem;
+    width: 90%;
+    margin: 0.5rem auto;
+  }
+
+  .content .par {
+    font-size: 1rem;
+  }
+
+  footer .social-media {
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+  }
+
+  footer .social-media ul {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .login-section {
+    max-width: 90%;
+  }
+
+  .slogan h1 {
+    font-size: 2em;
+  }
+
+  .slogan p {
+    font-size: 1.2em;
+  }
+
+  
+  /* Hacer que todos los contenedores principales sean responsivos */
+  .shop-header,
+  .productos-container,
+  .pagination,
+  .slogan,
+  .content,
+  .contact-section,
+  .form-container {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 1rem;
+  }
+
+  /* Ajustar el tamaño de fuente para mejor legibilidad en móviles */
+  body {
+    font-size: 16px;
+  }
+
+  /* Hacer que las imágenes sean responsivas */
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* Ajustar el espaciado en el menú responsivo */
+  .menu ul {
+    gap: 15px;
+  }
+
+  /* Mejorar la visualización de la sección de slogan */
+  .slogan {
+    min-height: 50vh;
+  }
+
+  /* Ajustar el tamaño de los iconos sociales para móviles */
+  footer .social-media li a img {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+
+  /* Hacer que los botones sean más fáciles de tocar en móviles */
+  button,
+  .pagination a,
+  .form-submit button {
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+  }
+
+  /* Ajustar el espaciado en el formulario para móviles */
+  .form-group {
+    margin-bottom: 1rem;
+  }
+
+  /* Hacer que las tablas sean responsivas si las hay */
+  table {
+    width: 100%;
+    overflow-x: auto;
+    display: block;
+  }
+  .panel-gerente-mozo-chef {
+    width: 80%;
+    padding: 15px;
+  }
+}

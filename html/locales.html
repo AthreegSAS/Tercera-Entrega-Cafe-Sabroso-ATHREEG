@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="cafe">
+    <meta name="author" content="Cafe Sabrosos">
+    <title>Café Sabrosos - Locales</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+        integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+        crossorigin="" />
+    <link rel="stylesheet" href="../style/index5.css">
+    <link rel="icon" href="../img/icon.png">
+    
+    <!-- Script de Idiomas -->
+<div class="gtranslate_wrapper"></div>
+<script>window.gtranslateSettings = {"default_language":"es","native_language_names":true,"detect_browser_language":true,"languages":["es","fr","de","pt","en"],"wrapper_selector":".gtranslate_wrapper"}</script>
+<script src="https://cdn.gtranslate.net/widgets/latest/float.js" defer></script> 
+    
+</head>
+<body>
+    <header>
+    <div class="logo">
+        <a href="../index.html">
+            <img src="../img/logo_nav.png" alt="Café Sabrosos Logo" class="logo-image">
+        </a>
+    </div>
+    <div class="navbar">
+    <input type="checkbox" id="menu-toggle" class="menu-toggle" />
+    <label for="menu-toggle" class="menu-toggle-label">☰</label>
+        <div class="menu">
+            <ul>
+                <li><a href="../index.html">INICIO</a></li>
+                <li><a href="../php/nosotros.php">NOSOTROS</a>
+                <ul class="submenu">
+                    <li><a href="histotria.html">HISTORIA</a></li>
+                    <li><a href="locales.html">LOCALES</a></li>
+                    <li><a href="../php/mercaderia.php">MERCADERIA</a></li>
+                </ul></li>
+                <li><a href="../php/pedido.php">PEDIDO</a></li>
+                <li><a href="../php/back/votos.php">OPINAR</a></li>
+                <li><a href="../php/login.php">LOGIN</a></li>
+                <li><a href="../php/contactar.php">CONTACTANOS</a></li>
+            </ul>
+        </div> 
+    </div>
+</header>
+<main>
+    <div class="wave-image">
+    <div class="slogan">
+        <h1>¿Dónde estamos ubicados?</h1>
+    </div>
+</div>
+    
+        
+        <div class="location-selector">
+            <label for="select-location">Selecciona un lugar:</label>
+            <select name="select-location" id="select-location">
+                <option value="-1">Seleccione un lugar:</option>
+                <option value="40.4122901,-3.7122488">C. de la Cava Baja, 32, Centro, 28005 Madrid, España</option>
+                <option value="48.859854,2.299847">2 Rue Edmond Valentin, 75007 Paris, Francia</option>
+                <option value="52.5117079,13.3890683">Berlín, Alemania</option>
+                <option value="38.6977485,-9.2889956">Av. Salvador Allende 74-76, Paço de Arcos, Lisboa, Portugal</option>
+            </select>
+        </div>
+        
+
+    <div id="map"></div>
+
+    
+    </main>
+    <footer>
+        <div class="social-media">
+            <ul>
+                <li><a href="https://www.instagram.com/athreeg_s.a.s/" target="_blank"><img src="../img/ig.png" alt="Instagram">.</a></li>
+                <li><a href="https://x.com/" target="_blank"><img src="../img/x.png" alt="X"> .</a></li>
+                <li><a href="https://www.facebook.com/athreesas/"" target="_blank"><img src="../img/facebook.png" alt="Facebook">.</a></li>
+            </ul>
+        </div>
+        <p>&copy; Café Sabrosos 2024. A tu servicio desde 1990</p>
+    </footer>
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+        integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+        crossorigin=""></script>
+    <script src="../js/mapa.js"></script>
+</body>
+</html>

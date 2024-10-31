@@ -1,0 +1,48 @@
+Aqui nombre de usuario y password de cada una de las máquinas virtuales.
+● Maquina Virtual del Gerente:
+Usuario: Gerente
+Password: C3HKuKXoB@jS
+● Máquina Virtual del Chef:
+Usuario: chef
+Password: Esr4PYtfup@0
+7
+● Maquina Virtual del Mozo:
+Usuario: Mozo
+Password: Yz@sGonaRyF
+Yz@sGonaRyF
+
+
+
+
+Para ingresar al servidor:
+
+serversCafeSAbrosoEtregable es Ubuntu Servers
+
+usuario: cafeadmin
+password: 123456
+ip fija 192.168.1.111        192.168.30.101 (solo cambia esto resto seria lo mismo.
+http://192.168.1.111/cafesabrosos/ (realizando un sudo /opt/lampp/lampp start password
+123456) Es una muestra del sitio completo, en el servidor no se implementó todo, si se puede ver
+en phpmyadmin la base de datos cafesabrosos.
+
+
+*********************************************************
+		Para probar la Pagina
+
+Rol             Usuario                    Password
+--------   ------------------------    ---------------- 
+Mozo        lucia@example.com            lucia,1234
+Mozo        martina@example.com          martina,1234
+--------   ------------------------    ----------------
+
+Chef        agustina@example.com         agustina,1234
+Chef        juan@example.com             juan,1234
+--------   ------------------------    ----------------
+
+Gerente     gabriel@example.com          gabriel,1234
+Gerente     federico@example.com         federico,1234
+--------   ------------------------    -----------------
+Cliente     ana@example.com               ana,1234
+Cliente     carlos@example.com           Carlos,1234
+
+**********************************************************
